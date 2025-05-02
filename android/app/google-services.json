@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1056346182009",
+    "project_id": "flutter-task-app-e9ec6",
+    "storage_bucket": "flutter-task-app-e9ec6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056346182009:android:a3bbd331eb7e14adc59fa8",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaFOjSVKHGxMmgc92094PIzsVXdNT-tSE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056346182009:android:840dbeb8444bad72c59fa8",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaFOjSVKHGxMmgc92094PIzsVXdNT-tSE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
