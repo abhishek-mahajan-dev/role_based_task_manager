@@ -35,22 +35,6 @@ class _EmployeeTaskSubmissionScreenState
     });
   }
 
-  Future<String> _getSubmittedByDetails(String userId) async {
-    try {
-      final userSnapshot =
-          await FirebaseFirestore.instance
-              .collection('people')
-              .doc(userId)
-              .get();
-      if (userSnapshot.exists) {
-        return '${userSnapshot['name']} (${userSnapshot['email']})';
-      }
-      return 'Unknown User';
-    } catch (e) {
-      return 'Error fetching user';
-    }
-  }
-
   Future<void> _submitTask() async {
     if (_selectedTaskId == null || _commentController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -132,27 +116,6 @@ class _EmployeeTaskSubmissionScreenState
                       child: Text("Submit Task"),
                     ),
                     SizedBox(height: 20),
-
-                    FutureBuilder<String>(
-                      future:
-                          _selectedTaskId != null
-                              ? _getSubmittedByDetails(
-                                _assignedTasks.firstWhere(
-                                  (doc) => doc.id == _selectedTaskId,
-                                )['submittedBy'],
-                              )
-                              : Future.value('No task selected'),
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState ==
-                            ConnectionState.waiting) {
-                          return Text("Loading submitted by...");
-                        }
-                        if (snapshot.hasError) {
-                          return Text("Error: ${snapshot.error}");
-                        }
-                        return Text("Submitted By: ${snapshot.data}");
-                      },
-                    ),
                   ],
                 ),
       ),
